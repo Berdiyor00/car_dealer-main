@@ -1,0 +1,15 @@
+# docker-compose.yml
+version: '3'
+services:
+  car_dealer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: car_dealer
+    restart: always
+    volumes:
+      - ./instance:/instance  
+    ports:
+      - 7000:7000
+    environment:
+      - APPLICATION_ROOT=/car_dealer  # Устанавливаем корень приложения

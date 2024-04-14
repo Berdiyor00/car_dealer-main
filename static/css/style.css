@@ -1,0 +1,337 @@
+/* General Body Styling */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* General Container and Spacing */
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: -50px; /* Pull the container up to overlay partially on the header */
+  max-width: 1200px; /* Adjust container width as needed */
+  margin: auto;
+}
+
+/* Header Styling */
+#header {
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black for a modern look */
+  padding: 20px 0;
+  height: 80px; /* Define a fixed height */
+  transition: all 0.5s;
+}
+
+#header.header-transparent {
+  background: transparent;
+}
+
+#header .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+#header .logo img {
+  max-height: 60px;
+}
+
+/* Styling for Header Contact Info */
+.header-contact-info {
+  display: flex;
+  align-items: right;
+  gap: 20px; /* Adjust the space between items */
+  transition: all 0.3s ease;
+}
+
+.header-contact-info a {
+  color: #000000;
+  transition: color 0.3s;
+}
+
+.header-contact-info a:hover {
+  color: #070067; /* Highlight color when hovered */
+}
+
+/* Mobile Contact Toggle */
+.mobile-contact-toggle {
+  display: none; /* Hidden by default */
+  color: #000000;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Our Features Section Styles */
+.our-features {
+  padding-top: 100px;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.feature-box {
+  margin: 20px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.feature-box i {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.feature-box h4, .feature-box p {
+  margin-bottom: 15px;
+}
+
+.feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Card General Styles */
+.car-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+}
+
+.car-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 15px rgba(0,0,0,.2);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px; /* Adjust based on your preference */
+  object-fit: cover; /* Ensure images cover the area nicely */
+}
+
+.card-body {
+  background: #fff;
+  padding: 20px;
+}
+
+.card-title a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.card-title a:hover {
+  color: #0056b3;
+}
+
+.card-price {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-price small {
+  font-weight: normal;
+}
+
+.card-mileage {
+  color: #666;
+  font-size: 14px;
+}
+
+.card-mileage i {
+  font-style: normal;
+  color: #333;
+}
+
+/* Car Detail */
+.car-photo {
+  max-height: 500px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.list-group-item {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+.carousel .carousel-item {
+  text-align: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+.carousel-container {
+  flex: 1;
+  padding-right: 20px; /* Space between carousel and details */
+}
+
+#carouselExampleIndicators {
+  max-width: 300px; /* Smaller carousel width */
+  margin: auto;
+}
+
+.car-details {
+  flex: 3;
+}
+
+/* Footer Styles */
+.footer {
+  background: #f5f5f5;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer .credits {
+  margin: 0;
+  font-size: 16px;
+}
+
+.social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links a:hover {
+  background: #ffd700;
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  background: #007bff;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  z-index: 9999;
+}
+
+.back-to-top:hover {
+  background: #0056b3;
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .col-md-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  #header .logo img {
+    max-height: 30px; /* Smaller than original 60px */
+  }
+
+  .col-md-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+
+  .container {
+      padding: 0 15px;
+  }
+
+  .feature-box {
+    margin: 10px 5px;
+    padding: 10px 5px;
+  }
+
+  .feature-box i {
+    font-size: 24px; /* Smaller icon size for mobile */
+  }
+
+  .feature-box h4 {
+    font-size: 16px; /* Adjust title size for mobile */
+  }
+
+  .feature-box p {
+    display: none; /* Hide descriptions on mobile */
+  }
+
+  .feature-row {
+    justify-content: center;
+  }
+
+  .car-photo {
+      max-height: 300px;
+  }
+
+  .list-group-item {
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .car-photo {
+      max-height: 300px;
+  }
+
+  .list-group-item {
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 14px;
+  }
+
+  .container {
+      padding: 0 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .d-flex {
+      flex-direction: column;
+  }
+
+  #carouselExampleIndicators {
+      max-width: 100%; /* Allow carousel to expand on smaller screens */
+  }
+
+  .carousel-container, .car-details {
+      padding-right: 0;
+      padding-bottom: 20px;
+  }
+}
+
