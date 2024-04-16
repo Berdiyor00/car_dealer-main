@@ -1,5 +1,11 @@
 {% include 'header.html' %}
+<style>
+    .from {
+        padding-bottom: 20px;
+    }
+</style>
 <h1>Edit Car</h1>
+
 <div class="container">
 
     <form method="POST" class="">
@@ -85,7 +91,7 @@
         {% for photo in car.photos %}
         <li class="list-unstyled">
             <img src="{{ photo.path }}" alt="Car Photo" style="max-width: 350px; max-height: 350px;">
-            <form method="POST" action="{{ url_for('delete_photo', photo_id=photo.id) }}">
+            <form method="POST" action="{{ url_for('delete_photo', photo_id=photo.id) }}" class="from">
                 <button type="submit" class="btn btn-primary mt-4">Delete</button>
             </form>
         </li>

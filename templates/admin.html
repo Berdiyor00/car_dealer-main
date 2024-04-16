@@ -1,8 +1,17 @@
 {% include 'header.html' %}
 <style>
-    .row {
+    .rows {
         display: flex;
         justify-content: space-evenly;
+        margin-top: 113px !important;
+        flex-wrap: wrap;
+        padding-bottom: 220px;
+    }
+    
+    @media (max-width:568px) {
+        .rows {
+            margin-top: 63px !important;
+        }
     }
     
     .img-fluid {
@@ -11,9 +20,8 @@
     }
 </style>
 
-<div class="row mt-5">
+<div class="rows mt-5">
     {% for car in cars %}
-    <h1>Welcome to the Car Dealership</h1>
     <div class="col-md-4 mb-2">
         <div class="card h-100">
             <div class="row g-0">
