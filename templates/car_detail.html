@@ -24,13 +24,57 @@
     
     .btn-group {
         border-radius: var(--bs-border-radius);
-        display: flex;
-        flex-wrap: wrap;
         align-items: center;
         row-gap: 20px;
+        display: flex;
+        flex-wrap: wrap !important;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .grids {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+    }
+    
+    @media (max-width:768px) {
+        .grids {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    
+    @media (max-width:568px) {
+        .grids {
+            grid-template-columns: 1fr;
+            justify-content: flex-end !important;
+        }
+    }
+    
+    .list-group-item-text {
+        display: inline-block;
+        font-weight: 800;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-transform: capitalize;
+    }
+    
+    .list-group-item {
+        display: flex;
+        align-items: center;
+        column-gap: 7px;
+    }
+    
+    .list-group-items {
+        display: flex;
+        align-items: center;
+        column-gap: 7px;
+    }
+    
+    .view {
+        color: rgb(0, 106, 255);
     }
 </style>
-<div class="container" style="margin-top: 80px;!important">
+<div class="container" style="margin-top:80px;!important">
     <!-- Car Photos Carousel -->
     <div class="d-flex flex-row flex-wrap align-items-start">
         <div class="carousel-container">
@@ -65,21 +109,21 @@
         <h1>
             <li class="list-group-item"><strong>Price:</strong> ${{ car.price }}</li>
         </h1>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>Year:</strong> {{ car.year }}</li>
-            <li class="list-group-item"><strong>VIN:</strong> {{ car.vin }}</li>
-            <li class="list-group-item"><strong>Driveline:</strong> {{ car.driveline }}</li>
-            <li class="list-group-item"><strong>Carfax Report:</strong> <a href="{{ car.carfax_report }}">View Report</a></li>
-            <li class="list-group-item"><strong>Mileage:</strong> {{ car.mileage }}</li>
-            <li class="list-group-item"><strong>Fuel Type:</strong> {{ car.fuel_type }}</li>
-            <li class="list-group-item"><strong>Owners:</strong> {{ car.owners }}</li>
-            <li class="list-group-item"><strong>Engine:</strong> {{ car.engine }}</li>
-            <li class="list-group-item"><strong>Price:</strong> ${{ car.price }}</li>
-            <li class="list-group-item"><strong>Body Style:</strong> {{ car.body_style }}</li>
+        <ul class="list-group list-group-flush grids ">
+            <li class="list-group-item"><span class="list-group-item-text">Year:</span> {{ car.year }}</li>
+            <li class="list-group-item"><span class="list-group-item-text">VIN:</span> {{ car.vin }}</li>
+            <li class="list-group-item"><span class="list-group-item-text">Driveline:</span> {{ car.driveline }}</li>
+            <li class="list-group-item"><span class="list-group-item-text">Mileage:</span> {{ car.mileage }}</li>
+            <li class="list-group-item"><span class="list-group-item-text">Fuel Type:</span> {{ car.fuel_type }}</li>
+            <li class="list-group-item"><span class="list-group-item-text">Owners:</span> {{ car.owners }}</li>
+            <li class="list-group-item"><span class="list-group-item-text">Engine:</span> {{ car.engine }}</li>
+
+            <li class="list-group-item"><span class="list-group-item-text">Body Style:</span> {{ car.body_style }}</li>
+            <li class="list-group-items"><span class="list-group-item-text">Carfax Report:</span> <a href="{{ car.carfax_report }}" class="view">View Report</a></li>
         </ul>
     </div>
     <!-- Credit Calculator -->
-    <div class="credit-calculator">
+    <div class="credit-calculator mt-5">
         <h2>Credit Calculator</h2>
         <form id="creditCalculatorForm">
             <div class="mb-3">
@@ -169,10 +213,4 @@
             calculateLoan();
         });
     </script>
-
-
-
-
-
-
     {% include 'footer.html' %}
